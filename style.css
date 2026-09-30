@@ -1,0 +1,35 @@
+body {
+    background-color: #A1B0ED;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: #555C7A;
+}
+
+.navbar {
+    background-color: #B8A1ED;
+    border-radius: 10px;
+    display: flex;
+}
+
+.nav_items {
+    padding: 10px;
+}
+
+a {
+    color: #555C7A;
+    text-decoration: none;
+    font-size: large;
+    font-style: BOLD;
+}
+
+input {
+    border-radius: 10px;
+    border-top: #555C7A;
+}
+
+button {
+    border-radius: 10px;
+    border-top: #555C7A;
+    color: #555C7A;
+    background-color: #B8A1ED;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}

@@ -1,0 +1,56 @@
+<?php
+
+session_start();
+
+include "db.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    
+    $username = $_POST["username"];
+    $password = $_POST["user_password"];
+
+    $sql = "SELECT * FROM metadata WHERE username = ?";
+
+    $result = $pdo->prepare($sql);
+
+    $result->execute([$username]);
+
+    $user = $result->fetch(PDO::FETCH_ASSOC);
+
+    if ($user && password_verify($password, $user ["user_password"])) {
+            
+        $_SESSION["username"] = $user["username"];
+
+        header("Location: home.php");
+        exit;
+
+    } else {
+        echo "Login incorrect.";
+    }
+ 
+}
+
+?>
+
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="style.css">
+
+<form method="POST">
+
+    Username:
+    <input type="text" name="username">
+
+    <br><br>
+
+    Password:
+    <input type="password" name="user_password">
+
+    <br><br>
+
+    <button type="submit"> Login </button>
+
+</form>
+
+</body>
