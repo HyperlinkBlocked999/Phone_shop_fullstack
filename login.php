@@ -1,3 +1,39 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="style.css">
+
+<nav class="navbar">
+    <nav class="nav_items">
+        <a href="login.php">Login</a> 
+        <a href="register.php">Register</a> 
+    </nav>
+
+</nav>
+<form method="POST">
+
+    <h1> Login </h1>
+
+    Username:
+    <input type="text" name="username">
+
+    <br><br>
+
+    Password:
+    <input type="password" name="user_password">
+
+    <br><br>
+
+    <button type="submit"> Login </button>
+
+
+</form>
+
+</body>
+
+<br>
+
 <?php
 
 session_start();
@@ -31,26 +67,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-<link rel="stylesheet" href="style.css">
-
-<form method="POST">
-
-    Username:
-    <input type="text" name="username">
-
-    <br><br>
-
-    Password:
-    <input type="password" name="user_password">
-
-    <br><br>
-
-    <button type="submit"> Login </button>
-
-</form>
-
-</body>

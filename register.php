@@ -1,3 +1,37 @@
+
+<!DOCTYPE html>
+<html>
+<body>
+<link rel="stylesheet" href="style.css">
+
+<nav class="navbar">
+    <nav class="nav_items">
+        <a href="login.php">Login</a> 
+        <a href="register.php">Register</a> 
+    </nav>
+
+</nav>
+
+<form method="POST">
+
+    <h1> Register </h1>
+
+    Username:
+    <input type="text" id="username" name="username" required>
+
+    <br><br>
+
+    Password:
+    <input type="password" id="user_password" name="user_password" required>
+
+    <br><br>
+
+    <button type="submit"> Register Account </button>
+
+</form>
+
+</body>
+
 <?php 
 
 include "db.php";
@@ -21,26 +55,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 
 ?>
-
-<!DOCTYPE html>
-<html>
-<body>
-<link rel="stylesheet" href="style.css">
-
-<form method="POST">
-
-    Username:
-    <input type="text" id="username" name="username" required>
-
-    <br><br>
-
-    Password:
-    <input type="password" id="user_password" name="user_password" required>
-
-    <br><br>
-
-    <button type="submit"> Register Account </button>
-
-</form>
-
-</body>
