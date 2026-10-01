@@ -17,6 +17,34 @@ if (isset($_GET["id"])) {
 
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $id = $_POST["id"];
+    $brand = $_POST["brand"];
+    $model = $_POST["model"];
+    $storage = $_POST["storage_gb"];
+    $price = $_POST["price"];
+    
+    $sql = "UPDATE phones
+            SET brand = ?,model = ?, storage_gb = ?, price = ?
+            WHERE id = ?";
+    
+    $result = $pdo->prepare($sql);
+    
+    $result->execute([$brand, $model, $storage, $price,$id]);
+    
+    
+    header("Location: show_phones.php");
+    exit; 
+    }
+
+    if (!isset($_GET["id"])) {
+ 
+        header("Location: show_phones.php");
+        exit;
+     
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -58,26 +86,6 @@ if (isset($_GET["id"])) {
 </body>
 </html>
 
-<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$id = $_POST["id"];
-$brand = $_POST["brand"];
-$model = $_POST["model"];
-$storage = $_POST["storage_gb"];
-$price = $_POST["price"];
-
-$sql = "UPDATE phones
-        SET brand = ?,model = ?, storage_gb = ?, price = ?
-        WHERE id = ?";
-
-$result = $pdo->prepare($sql);
-
-$result->execute([$brand, $model, $storage, $price,$id]);
-
-
-echo "<br>";
-echo "Phone Has been Updated"; 
-}
-?>
 
 

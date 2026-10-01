@@ -17,6 +17,28 @@ if (isset($_GET["id"])) {
 
 }
 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $id = $_POST["id"];
+    
+    $sql = "DELETE FROM phones
+            WHERE id = ?";
+    
+    $result = $pdo->prepare($sql);
+    
+    $result->execute([$id]);
+     
+     header("Location: show_phones.php");
+     exit;
+    }
+
+    if (!isset($_GET["id"])) {
+    
+        header("Location: show_phones.php");
+        exit;
+    
+    }
+
 ?>
 
 <!DOCTYPE html>
@@ -48,19 +70,5 @@ echo $record["model"];
 </body>
 </html>
 
-<?php if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
-$id = $_POST["id"];
-
-$sql = "DELETE FROM phones
-        WHERE id = ?";
-
-$result = $pdo->prepare($sql);
-
-$result->execute([$id]);
-
- echo "<br>";
- echo "Phone Has been Deleted"; 
-}
-?>
 

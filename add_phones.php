@@ -8,23 +8,23 @@
 
 <form method="POST">
 
-    Brand:
-    <input type="varchar" name="brand">
+    <label for="brand"> Brand </label>
+    <input type="varchar" name="brand" id="brand" required>
 
     <br><br>
 
-    Model:
-    <input type="varchar" name="model">
+    <label for="model"> Model </label>
+    <input type="varchar" name="model" id="model" required>
 
     <br><br>
 
-    Storage(GB):
-    <input type="int" name="storage_gb">
+    <label for="storage_gb"> Storage(GB)</label>
+    <input type="int" name="storage_gb" id="storage_gb" required>
 
     <br><br>
 
-    Price(£):
-    <input type="decimal" name="price">
+    <label for="price"> Price(£) </label>
+    <input type="decimal" name="price" id="price" required>
 
     <br><br>
 
