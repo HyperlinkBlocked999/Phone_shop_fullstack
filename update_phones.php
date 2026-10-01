@@ -23,7 +23,7 @@ if (isset($_GET["id"])) {
 <html>
 <body>
 
-<?php include "home.php"; ?>
+<?php include "nav.php"; ?>
 
 <h1>Update Record</h1>
 

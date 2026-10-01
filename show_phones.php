@@ -12,7 +12,7 @@ $result = $pdo->query($sql);
 <html>
 <body>
 
-<?php include "home.php"; ?>
+<?php include "nav.php"; ?>
 
 <h1>View Records</h1>
 
@@ -22,16 +22,16 @@ foreach ($result as $record) {
     
     echo "ID: ";
     echo $record["id"];
-    echo " -- ";
+    echo " │ ";
 
     echo $record["brand"];
-    echo " -- ";
+    echo " │ ";
 
     echo $record["model"];
-    echo " -- ";
+    echo " │ ";
 
     echo $record["storage_gb"] ."GB";
-    echo " -- ";
+    echo " │ ";
 
     echo "£";
     echo $record["price"];
@@ -39,7 +39,7 @@ foreach ($result as $record) {
 
     echo '<a href="update_phones.php?id=' . $record["id"]. '"> Edit</a>';
 
-    echo " / ";
+    echo " │ ";
 
     echo '<a href="delete_phones.php?id=' . $record["id"]. '"> Delete</a>';
 

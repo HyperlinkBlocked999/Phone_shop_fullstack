@@ -11,31 +11,22 @@ if (!isset($_SESSION["username"])) {
 
 ?>
 
+<?php include "nav.php"; ?>
+
 <!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<nav class="navbar">
-    <nav class="nav_items">
-        <a href="show_phones.php">VIEW</a> 
-        <a href="add_phones.php">CREATE</a>
-        <a href="home.php">HOME</a> 
-    </nav>
-
-</nav>
 
 </head>
 <body>
 
-</body>
-</html>
-
-<?php
-
-echo "Hello " .$_SESSION["username"];
-
-?>
+<?php echo "Hello " .$_SESSION["username"]; ?>
 
 <br><br>
 
 <a href="logout.php"> Logout </a>
+
+</body>
+</html>
+
