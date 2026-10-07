@@ -6,7 +6,7 @@
     <nav class="nav_items">
         <a href="home.php">HOME</a> 
         <a href="show_phones.php">VIEW</a> 
-        <a href="add_phones.php">CREATE</a>
+        <?php session_start(); if ($_SESSION["role"] == "admin") {echo '<a href="add_phones.php">ADMIN</a>'; } ?>
         <a href="logout.php"> LOGOUT </a>
     </nav>
 
