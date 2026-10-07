@@ -17,12 +17,12 @@
     <h1> Register </h1>
 
     Username:
-    <input type="text" id="username" name="username" required>
+    <input type="text" id="username" name="username" minlength="6" maxlength="16" required>
 
     <br><br>
 
     Password:
-    <input type="password" id="user_password" name="user_password" required>
+    <input type="password" id="user_password" name="user_password" minlength="6" maxlength="64" required>
 
     <br><br>
 
@@ -52,6 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     echo "<br>";
     echo "User Has been added to the system.";
 
+} else {
+    
 }
 
 ?>
