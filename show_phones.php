@@ -2,6 +2,8 @@
 
 include "db.php";
 
+session_start();
+
 $sql = "SELECT * FROM phones";
 
 $result = $pdo->query($sql);
@@ -37,11 +39,17 @@ foreach ($result as $record) {
     echo $record["price"];
     echo "<br>";
 
-    echo '<a href="update_phones.php?id=' . $record["id"]. '"> Edit</a>';
-
-    echo " │ ";
-
-    echo '<a href="delete_phones.php?id=' . $record["id"]. '"> Delete</a>';
+    if ($_SESSION["role"] == "admin") {
+        
+        echo '<a href="update_phones.php?id=' . $record["id"] . '">Update</a>';
+        echo" │ ";
+        echo '<a href="delete_phones.php?id=' . $record["id"] . '">Delete</a>';
+     
+     } elseif ($_SESSION["role"] == "staff") {
+ 
+         echo '<a href="update_phones.php?id=' . $record["id"] . '">Update</a>';
+ 
+     }
 
     echo "<hr>";
     

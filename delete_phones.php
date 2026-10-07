@@ -2,6 +2,8 @@
 
 include "db.php";
 
+session_start();
+
 if (isset($_GET["id"])) {
 
     $id = $_GET["id"];
@@ -39,12 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     }
     
-    if ($_SESSION["role"] != "admin") {
-        
-        header("Location: show_phones.php");
-        exit;
     
-    }
 ?>
 
 <!DOCTYPE html>
