@@ -16,12 +16,12 @@
     <h1> Login </h1>
 
     Username:
-    <input type="text" name="username">
+    <input type="text" name="username" id="username" required>
 
     <br><br>
 
     Password:
-    <input type="password" name="user_password">
+    <input type="password" name="user_password" id="user_password" required>
 
     <br><br>
 

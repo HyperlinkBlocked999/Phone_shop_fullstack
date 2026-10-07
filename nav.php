@@ -7,6 +7,7 @@
         <a href="home.php">HOME</a> 
         <a href="show_phones.php">VIEW</a> 
         <a href="add_phones.php">CREATE</a>
+        <a href="logout.php"> LOGOUT </a>
     </nav>
 
 </nav>

@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <body>
 
-<?php include "home.php"; ?>
+<?php include "nav.php"; ?>
 
 <h1>Delete Record</h1>
 

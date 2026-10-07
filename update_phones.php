@@ -60,22 +60,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <input type="hidden" name="id" value="<?php echo $record["id"]; ?>">
 
     Brand:
-    <input type="text" name="brand" value="<?php echo $record["brand"]; ?>">
+    <input type="text" name="brand" id="brand" value="<?php echo $record["brand"]; ?>" required>
 
     <br><br>
 
     Model:
-    <input type="text" name="model" value="<?php echo $record["model"]; ?>">
+    <input type="text" name="model" id="model" value="<?php echo $record["model"]; ?>" required>
 
     <br><br>
 
     Storage(GB):
-    <input type="number" name="storage_gb" value="<?php echo $record["storage_gb"]; ?>">
+    <input type="number" name="storage_gb" id="storage_gb" value="<?php echo $record["storage_gb"]; ?>" required>
 
     <br><br>
 
     Price(£):
-    <input type="number" step="0.01" name="price" value="<?php echo $record["price"]; ?>">
+    <input type="number" step="0.01" name="price" id="price" value="<?php echo $record["price"]; ?>" required>
 
     <br><br>
 
