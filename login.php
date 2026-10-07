@@ -56,6 +56,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($user && password_verify($password, $user ["user_password"])) {
             
         $_SESSION["username"] = $user["username"];
+        $_SESSION["role"] = $user["role"];
 
         header("Location: home.php");
         exit;

@@ -38,7 +38,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit;
     
     }
-
+    
+    if ($_SESSION["role"] != "admin") {
+        
+        header("Location: show_phones.php");
+        exit;
+    
+    }
 ?>
 
 <!DOCTYPE html>
