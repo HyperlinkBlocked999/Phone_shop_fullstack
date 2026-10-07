@@ -44,6 +44,8 @@ foreach ($result as $record) {
         echo '<a href="update_phones.php?id=' . $record["id"] . '">Update</a>';
         echo" │ ";
         echo '<a href="delete_phones.php?id=' . $record["id"] . '">Delete</a>';
+
+        include "show_accounts.php";
      
      } elseif ($_SESSION["role"] == "staff") {
  
