@@ -1,6 +1,6 @@
 <?php 
 
-session_start();
+ include "nav.php"; 
 
 if (!isset($_SESSION["username"])) {
         
@@ -10,8 +10,6 @@ if (!isset($_SESSION["username"])) {
 }
 
 ?>
-
-<?php include "nav.php"; ?>
 
 <!DOCTYPE html>
 <html>
