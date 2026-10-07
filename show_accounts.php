@@ -12,11 +12,12 @@ $result = $pdo->query($sql);
 <html>
 <body>
 
+<h1>View Accounts</h1>
+
 <?php
 
 foreach ($result as $record) {
     
-    echo " │ ";
     echo "ID: ";
     echo $record["user_id"];
     echo " │ ";
@@ -25,8 +26,9 @@ foreach ($result as $record) {
     echo " │ ";
 
     echo $record["role"];
-    echo " │ ";
+    echo "<br>";
     
+    echo "<hr>";
 }
 
 ?>

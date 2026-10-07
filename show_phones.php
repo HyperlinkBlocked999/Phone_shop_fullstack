@@ -16,7 +16,7 @@ $result = $pdo->query($sql);
 
 <?php include "nav.php"; ?>
 
-<h1>View Records</h1>
+<h1>View Phones</h1>
 
 <?php
 
@@ -44,8 +44,6 @@ foreach ($result as $record) {
         echo '<a href="update_phones.php?id=' . $record["id"] . '">Update</a>';
         echo" │ ";
         echo '<a href="delete_phones.php?id=' . $record["id"] . '">Delete</a>';
-
-        include "show_accounts.php";
      
      } elseif ($_SESSION["role"] == "staff") {
  
@@ -56,5 +54,13 @@ foreach ($result as $record) {
     echo "<hr>";
     
 }
+
+if ($_SESSION["role"] == "admin") {
+
+        
+        
+    include "show_accounts.php";
+ 
+ }
 
 ?>
