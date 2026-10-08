@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (!isset($_GET["id"])) {
  
-        header("Location: admin_panel.php");
+        header("Location: home.php");
         exit;
      
     }
@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <body>
 
-<?php include "nav.php"; ?>
+<?php include "nav_admin.php"; ?>
 
 <h1>Update Record</h1>
 

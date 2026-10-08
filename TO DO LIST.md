@@ -13,4 +13,4 @@
 
 . many different files may be created, but organising folders must be added as well
 
-. prevent users from manually acessing add_phones.php
+. prevent users from manually accessing admin_panel.php

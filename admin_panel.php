@@ -6,9 +6,7 @@ include "db.php";
 if ($_SESSION["role"] == "admin") {
         
     include "nav_admin.php";
- 
  }
-
 
 $sql = "SELECT * FROM phones";
 
@@ -54,6 +52,8 @@ foreach ($result as $record) {
          echo '<a href="update_phones.php?id=' . $record["id"] . '">Update</a>';
  
      }
+
+     
 
     echo "<hr>";
     
