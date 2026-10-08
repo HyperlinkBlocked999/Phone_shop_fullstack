@@ -1,6 +1,14 @@
 <?php
 
+session_start();
 include "db.php";
+
+if ($_SESSION["role"] == "admin") {
+        
+    include "nav_admin.php";
+ 
+ }
+
 
 $sql = "SELECT * FROM phones";
 
@@ -11,8 +19,6 @@ $result = $pdo->query($sql);
 <!DOCTYPE html>
 <html>
 <body>
-
-<?php include "nav.php"; ?>
 
 <h1>View Phones</h1>
 
@@ -53,10 +59,6 @@ foreach ($result as $record) {
     
 }
 
-if ($_SESSION["role"] == "admin") {
-        
-    include "nav_admin.php";
- 
- }
+
 
 ?>

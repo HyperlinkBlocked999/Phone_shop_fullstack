@@ -1,4 +1,28 @@
+<?php
 
+include "db.php";
+include "nav_admin.php";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    $brand = $_POST["brand"];
+    $model = $_POST["model"];
+    $storage = $_POST["storage_gb"];
+    $price = $_POST["price"];
+
+    $sql = "INSERT INTO phones
+            (brand, model, storage_gb, price)
+            VALUES (?, ?, ?, ?)";
+
+    $result = $pdo->prepare($sql);
+
+    $result->execute([$brand, $model, $storage, $price]);
+
+    header("Location: admin_panel.php");
+        exit;
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -34,27 +58,4 @@
 
 </body>
 </html>
-
-<?php
-
-include "db.php";
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    $brand = $_POST["brand"];
-    $model = $_POST["model"];
-    $storage = $_POST["storage_gb"];
-    $price = $_POST["price"];
-
-    $sql = "INSERT INTO phones
-            (brand, model, storage_gb, price)
-            VALUES (?, ?, ?, ?)";
-
-    $result = $pdo->prepare($sql);
-
-    $result->execute([$brand, $model, $storage, $price]);
-
-    header("Location: admin_panel.php");
-        exit;
-}
 

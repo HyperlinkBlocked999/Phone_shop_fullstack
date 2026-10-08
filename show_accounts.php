@@ -1,6 +1,7 @@
 <?php
 
 include "db.php";
+include "nav_admin.php";
 
 $sql = "SELECT * FROM metadata";
 
