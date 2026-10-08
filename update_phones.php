@@ -34,13 +34,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result->execute([$brand, $model, $storage, $price,$id]);
     
     
-    header("Location: show_phones.php");
+    header("Location: admin_panel.php");
     exit; 
     }
 
     if (!isset($_GET["id"])) {
  
-        header("Location: show_phones.php");
+        header("Location: admin_panel.php");
         exit;
      
     }

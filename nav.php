@@ -2,18 +2,13 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
-<nav class="navbar">
+<div class="navbar">
     <nav class="nav_items">
         <a href="home.php">HOME</a> 
-        <a href="show_phones.php">VIEW</a> 
-        <?php session_start(); if ($_SESSION["role"] == "admin") {echo '<a href="add_phones.php">ADMIN</a>'; } ?>
+        <?php session_start(); if ($_SESSION["role"] == "admin") {echo '<a href="admin_panel.php">ADMIN</a>'; } ?>
         <a href="logout.php"> LOGOUT </a>
     </nav>
 
-</nav>
-
+</div>
 </head>
-<body>
-
-</body>
 </html>

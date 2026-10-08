@@ -19,7 +19,13 @@ if (!isset($_SESSION["username"])) {
 </head>
 <body>
 
-<?php echo "Hello " .$_SESSION["username"]; ?>
+<?php echo "Hello " .$_SESSION["username"];
+if ($_SESSION["role"] == "admin") {
+        
+    echo ", you are an " .$_SESSION["role"] ;
+ 
+ }
+?>
 
 <br><br>
 

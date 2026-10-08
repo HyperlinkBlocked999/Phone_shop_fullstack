@@ -1,4 +1,4 @@
-<?php include "nav.php"; ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -54,6 +54,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result->execute([$brand, $model, $storage, $price]);
 
-    echo "<br>";
-    echo "Phone Has been Added";
+    header("Location: admin_panel.php");
+        exit;
 }
+

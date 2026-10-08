@@ -55,7 +55,7 @@ foreach ($result as $record) {
 
 if ($_SESSION["role"] == "admin") {
         
-    include "show_accounts.php";
+    include "nav_admin.php";
  
  }
 
