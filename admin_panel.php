@@ -3,7 +3,7 @@
 session_start();
 include "db.php";
 
-if ($_SESSION["role"] == "admin") {
+if ($_SESSION["role"] == "admin" Or $_SESSION["role"] == "staff") {
         
     include "nav_admin.php";
  }
@@ -39,6 +39,12 @@ foreach ($result as $record) {
 
     echo "£";
     echo $record["price"];
+    echo " │ ";
+
+    echo $record["quantity"];
+    echo " │ ";
+
+    echo $record["images"];
     echo "<br>";
 
     if ($_SESSION["role"] == "admin") {

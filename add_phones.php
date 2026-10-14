@@ -9,14 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $model = $_POST["model"];
     $storage = $_POST["storage_gb"];
     $price = $_POST["price"];
+    $quantity = $_POST["quantity"];
+    $images = $_POST["images"];
 
     $sql = "INSERT INTO phones
-            (brand, model, storage_gb, price)
-            VALUES (?, ?, ?, ?)";
+            (brand, model, storage_gb, price, quantity,images)
+            VALUES (?, ?, ?, ?, ?, ?)";
 
     $result = $pdo->prepare($sql);
 
-    $result->execute([$brand, $model, $storage, $price]);
+    $result->execute([$brand, $model, $storage, $price, $quantity,$images]);
 
     header("Location: admin_panel.php");
         exit;
@@ -49,6 +51,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <label for="price"> Price(£) </label>
     <input type="decimal" name="price" id="price" required>
+
+    <br><br>
+
+    <label for="quantity"> Quantity </label>
+    <input type="int" name="quantity" id="quantity" required>
+
+    <br><br>
+
+    <label for="images"> Image(images/.png) </label>
+    <input type="varchar" name="images" id="images" required>
 
     <br><br>
 

@@ -24,14 +24,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $model = $_POST["model"];
     $storage = $_POST["storage_gb"];
     $price = $_POST["price"];
+    $quantity = $_POST["quantity"];
+    $images = $_POST["images"];
     
     $sql = "UPDATE phones
-            SET brand = ?,model = ?, storage_gb = ?, price = ?
+            SET brand = ?,model = ?, storage_gb = ?, price = ?, quantity = ?, images = ?
             WHERE id = ?";
     
     $result = $pdo->prepare($sql);
     
-    $result->execute([$brand, $model, $storage, $price,$id]);
+    $result->execute([$brand, $model, $storage, $price, $quantity, $images ,$id]);
     
     
     header("Location: admin_panel.php");
@@ -76,6 +78,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     Price(£):
     <input type="number" step="0.01" name="price" id="price" value="<?php echo $record["price"]; ?>" required>
+
+    <br><br>
+
+    Quantity: 
+    <input type="int" name="quantity" id="quantity" value="<?php echo $record["quantity"]; ?>" required>
+
+    <br><br>
+
+    <label for="images"> Image(images/.png) </label>
+    <input type="varchar" name="images" id="images" value="<?php echo $record["images"]; ?>" required>
 
     <br><br>
 
