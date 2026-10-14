@@ -1,6 +1,7 @@
 <?php 
 
- include "nav.php"; 
+ include "nav.php";
+ include "db_connect";
 
 if (!isset($_SESSION["username"])) {
         
@@ -9,26 +10,88 @@ if (!isset($_SESSION["username"])) {
 
 }
 
+$sql = "SELECT
+id,
+brand,
+model,
+storage_gb,
+price,
+quantity,
+images
+
+FROM phones
+ORDER BY brand, model";
+
+$result = $conn->query($sql);
+
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Home Page</title>
 
 </head>
+
 <body>
 
-<?php echo "Hello " .$_SESSION["username"];
-if ($_SESSION["role"] == "admin") {
-        
-    echo ", you are an " .$_SESSION["role"] ;
- 
- }
-?>
+<header>
+<h1>Placeholder Phone_shop</h1>
+</header>
 
-<br><br>
+<main class="phone-grid">
+
+<?php if ($result && $result->num_rows > 0): ?>
+<?php while ($phone = $result->fetch_assoc()): ?>
+<section class="phone-card">
+
+<h2>
+<?= htmlspecialchars($phone['model']) ?>
+</h2>
+
+<p>
+Brand:
+<?= htmlspecialchars($phone['brand']) ?>
+</p>
+
+<p>
+Storage:
+<?= htmlspecialchars($phone['storage_gb']) ?>
+</p>
+
+<p class="price">
+Price:
+<?= htmlspecialchars($phone['price']) ?>
+</p>
+
+<p>
+Quantity:
+<?= htmlspecialchars($phone['quantity']) ?>
+</p>
+
+<p>
+<img src="<?php echo htmlspecialchars($phone['images']); ?>" alt="<?php echo htmlspecialchars($phone['model']); ?> Image">
+</p>
+
+</section>
+
+<?php endwhile; ?>
+
+<?php else: ?>
+
+<p>No Phones were found.</p>
+
+<?php endif; ?>
+
+</main>
 
 </body>
 </html>
+
+<?php $conn->close(); ?>
 
